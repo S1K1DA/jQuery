@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>나이</td>
+                <td>주소</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>유저1</td>
+                <td>11</td>
+                <td>안양</td>
+            </tr>
+            <tr>
+                <td>유저2</td>
+                <td>22</td>
+                <td>서울</td>
+            </tr>
+            <tr>
+                <td>유저3</td>
+                <td>33</td>
+                <td>인천</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $("tr:first").css("color", "blue");
+        $("tr:last").css("color", "blue");
+        
+        $("tr:even").css("color", "green");
+        $("tr:odd").css("color", "red");
+        </script>
+
+        <hr>
+        <p>텍스트 1</p>
+        <p class="filter-test">텍스트 2</p>
+        <p class="filter-test">텍스트 3</p>
+        <p>텍스트 4</p>
+        <p>텍스트 5</p>
+
+        <script>
+            $("p").first().css("color", "blue");
+            $("p").last().css("color", "red");
+
+            // filter : 선택된 요소를 변경
+            $("p").filter(".filter-test").html("<span>선택됨</span>");
+            
+            $("p").not(".filter-test").text("<span>not 사용됨</span>");
+
+            $("p").eq(3).css("color", "aqua");
+            
+        </script>
+
+
+    </body>
+</html>

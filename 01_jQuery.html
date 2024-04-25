@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        <CDN>
+        구글에 google jquery cdn 검색
+        -> devloperes.google.com에서 CDN 링크 복사해오기
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 
+        <jQury>
+            JavaScript의 라이브러리 (jQuery 언어가 X)
+            기존의 자바스크립트 문법들을 간소화 + 기능 추가
+
+            <장점>
+            1. DOM 요소와 관련된것들을 자바스크립트보다 쉽게 구현 가능
+            2. ajax(비동기 통신), 이벤트 등 다양한 기능을 지원함
+            3. 플러그인, 오픈 API등을 지원(차트, 슬라이드, 등)
+    -->
+    <script>
+        // window.onload = function() {
+        //     const testSpan = document.getElementById("text-span");
+        //     testSpan.innerHTML = "변경됨";
+        // }
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     const testSpan = document.getElementById("text-span");
+        //     testSpan.innerHTML = "변경됨";
+        // })
+
+        // <jQuery 방식>
+            // jQuery(document).ready(function() {
+            //     실행할 코드 ...
+            // })
+
+
+            // $(document).ready(function() {
+            //     실행할 코드 ...
+            // })
+
+            $(function() {
+                const testSpan = $("#text-span");
+                testSpan.html("변경됨");
+            })
+
+
+    </script>
+
+    <span id="text-span">Hello, jQuery!</span>
+
+    <hr>
+
+    <p class="text-color-green">텍스트 1</p>
+    <p class="text-color-green">텍스트 2</p>
+    <p class="text-color-green">텍스트 3</p>
+    <script>
+        // 자바스크립트 방식
+        // const textColorGreen = document.getElementsByClassName("text-color-green");
+        // for(let i=0; i<textColorGreen.length; i++) {
+        //     textColorGreen[i].style.color = "green";
+        // }
+
+
+
+        // 제이쿼리 방식
+        const textColorGreen = $(".text-color-green");
+        textColorGreen.css("color","green");
+
+        $("p").css("color", "blue");
+    </script>
+
+    <hr>
+    <div>
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li class="div-list">리스트3</li>
+            <li class="div-list">리스트4</li>
+            <li>
+                <h3>후손 리스트</h3>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $("ul > li").css("color","green");
+        $("ul h3").css("color","red");
+    </script>
+
+    <hr>
+    <input type="text"> <br>
+    <input type="checkbox"> <br>
+    <input type="button">
+
+    <script>
+        $("input[type=text]").val("값");
+        $("input[type=checkbox]").attr("checked",true);
+        // $("input[type=button]").val("버튼");
+
+        // $("input[type=button]").css("width", "100px");
+        // $("input[type=button]").css("height", "100px");
+
+        // 메서드 체이닝 : 메서드를 연속적으로 호출하는 방식
+        // $("input[type=button]")
+        // .css("width","100px")
+        // .css("height","100px")
+        // .val("버튼");
+
+        $("input[type=button]")
+        .css({width:"100px", height:"100px"})
+        .val("버튼");
+
+
+    </script>
+    
+</body>
+</html>

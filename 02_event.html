@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_event.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .in-color {
+            background-color: aquamarine;
+        }
+        .out-color {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="아이디"> <br>
+        <input type="password" placeholder="패스워드"> <br>
+        <button type="button" class="submit-button">등록1</button>
+        <button type="button" class="submit-button">등록2</button>
+        <button type="button" class="submit-button">등록3</button>
+    </form>
+
+    <script>
+        // 버튼 클릭 이벤트 1
+        // $("#submit-button").click(function() {
+        //     alert($("input[type=password]").val());
+        // })
+        
+        // 버튼 클릭 이벤트 2 - 권장하는 방식
+        $("submit-button").on('click', function() {
+            alert($("input[type=password]").val());
+        })
+
+
+        // // 마우스가 요소 안으로 들어갈 때 발생하는 이벤트 : mouseenter
+        // $(".submit-button").on('mouseenter' , function() {
+        //     console.log($(".submit-button"));
+        //     $(this).css("backgroundColor", "aqua");
+        //     // $(".submit-button").css("backgroundColor", "aqua");
+        // })
+
+        // // 마우스가 요소 밖으로 나갈 때 발생하는 이벤트 : mouseout
+        // // 마우스가 밖으로 나갈 때 백그라운드 컬러를 다른 색상으로
+        // $(".submit-button").on('mouseout' , function() {
+        //     $(this).css("backgroundColor", "red")
+        // })
+
+        $(".submit-button").hover(function() {
+            // $(this).css("backgrondColor", "pink");
+            $(this).addClass("in-color");
+        }, function() {
+            // $(this).addClass("out-color");
+            $(this).removeClass("in-color");
+        })
+    </script>
+
+<hr>
+<select name="" id="movie">
+    <option value="선택안함">선택안함</option>
+    <option value="명량">명량</option>
+    <option value="범죄도시">범죄도시</option>
+    <option value="서울의봄">서울의봄</option>
+    <option value="파묘">파묘</option>
+</select>
+<p>선택된 영화는 : <span id="result-movie">선택안함</span> 입니다.</p>
+
+    <script>
+        $("#movie").on('change', function() {
+            console.log($(this).val());
+
+            const selectedMovie = $(this).val();
+            const resultMovie = $("#result-movie");
+
+            resultMovie.html(selectedMovie);
+        })
+    </script>
+
+
+
+
+
+</body>
+</html>
