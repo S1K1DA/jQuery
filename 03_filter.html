@@ -47,14 +47,14 @@
         <p>텍스트 1</p>
         <p class="filter-test">텍스트 2</p>
         <p class="filter-test">텍스트 3</p>
-        <p>텍스트 4</p>
+        <p>텍스트 4</p> 
         <p>텍스트 5</p>
 
         <script>
             $("p").first().css("color", "blue");
             $("p").last().css("color", "red");
 
-            // filter : 선택된 요소를 변경
+            // filter : 선택된 요소를 변경1
             $("p").filter(".filter-test").html("<span>선택됨</span>");
             
             $("p").not(".filter-test").text("<span>not 사용됨</span>");
