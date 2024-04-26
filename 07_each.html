@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_each.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        const animal = ["강아지", "고양이", "돼지"];
+
+        for(let item in animal) {
+            console.log(item);
+        }
+
+        $(animal).each(function(index, value) {
+            console.log("index : " + index);
+            console.log("value : " + value);
+        })
+
+
+
+        const dog = {
+            name: "강냉이",
+            age: 4,
+            addr: "안양"
+        }
+
+        $.each(dog ,function(key, value) {
+            console.log("key : " + key);
+            console.log("value : " + value);
+        })
+
+        const animalArr = [
+                        {name: "강아지", age: 5, addr: "안양"},
+                        {name: "고양이", age: 6, addr: "서울"},
+                        {name: "돼지", age: 7, addr: "인천"},
+                        ]
+
+        
+        $.each(animalArr, function(index, obj){
+            console.log("index : " + index);
+            console.log("obj : " + obj.addr);  
+
+
+
+            $.each(obj, function(key, value){
+                console.log("key : " + key)
+                console.log("value : " + value)
+            })
+        })
+    </script>
+
+    <div>
+        <h3>item-1</h3>
+        <h3>item-2</h3>
+        <h3>item-3</h3>
+        <h3>item-4</h3>
+        <h3>item-5</h3>
+    </div>
+
+    <script>
+        $("div").children().each(function(index, element) {
+            console.log("index : " + index);
+            console.log("element : " + element);
+
+            $(this).addClass("color-"+index);
+
+            if($(this).is(".h3-class")) {
+                console.log($(this))
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
